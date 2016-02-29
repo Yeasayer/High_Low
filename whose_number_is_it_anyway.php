@@ -21,11 +21,11 @@ do {
 		fwrite(STDOUT, "Guess lower fool!\n");
 		$guessNum = fgets(STDIN);
 		
-	} else {
+	} elseif ($guessNum < $realNum){
 		$guessCount += 1;
 		fwrite(STDOUT, "Guess higher fool!\n");
 		$guessNum = fgets(STDIN);
-	}
+	} 
 } while ($guessNum != $realNum);
 
 if ($guessNum == $realNum){
