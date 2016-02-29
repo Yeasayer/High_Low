@@ -1,11 +1,12 @@
 <?php
 
-fwrite(STDOUT, "Guess a number fool!\n");
-
-$realNum = mt_rand(1, 100);
-$guessNum = fgets(STDIN);
+$realNum = mt_rand($argv[1], $argv[2]);
 $guessCount = 0;
-echo "$realNum\n";
+fwrite(STDOUT, "Guess a number fool!\n");
+$guessNum = fgets(STDIN);
+
+
+
 
 do {
 	if ($guessNum > $realNum){
@@ -24,4 +25,5 @@ if ($guessNum == $realNum){
 	$guessCount += 1;
 	fwrite(STDOUT, "You did it in $guessCount guesses!\n");
 }
+exit(0);
 ?>
